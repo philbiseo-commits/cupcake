@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sydney Custom Cupcakes | Beautiful Cupcakes for Celebrations</title>
+  <meta
+    name="description"
+    content="Sydney custom cupcakes for birthdays, anniversaries, baby showers, gifting, and corporate events. Beautifully designed cupcakes made to make every celebration feel more special."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+  <style>
+    :root {
+      --bg: #fbf6f1;
+      --bg-soft: #f6ede5;
+      --surface: rgba(255, 252, 248, 0.72);
+      --surface-strong: #fffaf6;
+      --ink: #2f221c;
+      --muted: #725f55;
+      --accent: #c98f7c;
+      --accent-deep: #a86e5d;
+      --gold: #d9b77d;
+      --line: rgba(89, 62, 48, 0.12);
+      --shadow: 0 24px 60px rgba(74, 46, 34, 0.12);
+      --radius-lg: 32px;
+      --radius-md: 22px;
+      --radius-sm: 14px;
+      --max: 1200px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Manrope", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(217, 183, 125, 0.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(201, 143, 124, 0.16), transparent 24%),
+        linear-gradient(180deg, #fff8f3 0%, #fbf6f1 35%, #f7efe7 100%);
+      line-height: 1.6;
+    }
+
+    img { display: block; width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea, select { font: inherit; }
+
+    .page-shell::before,
+    .page-shell::after {
+      content: "";
+      position: fixed;
+      z-index: -1;
+      width: 22rem;
+      height: 22rem;
+      border-radius: 999px;
+      filter: blur(40px);
+      opacity: 0.35;
+    }
+
+    .page-shell::before {
+      top: -5rem;
+      left: -8rem;
+      background: rgba(217, 183, 125, 0.45);
+    }
+
+    .page-shell::after {
+      right: -8rem;
+      bottom: 10rem;
+      background: rgba(201, 143, 124, 0.35);
+    }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--max));
+      margin: 0 auto;
+    }
+
+    .announcement-bar {
+      padding: 0.8rem 0;
+      background: linear-gradient(90deg, rgba(168, 110, 93, 0.9), rgba(201, 143, 124, 0.88));
+      color: #fff9f4;
+      font-size: 0.9rem;
+      text-align: center;
+      letter-spacing: 0.01em;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      background: rgba(255, 250, 246, 0.82);
+      border: 1px solid rgba(169, 117, 98, 0.15);
+      color: var(--accent-deep);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 0.45rem;
+      height: 0.45rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--gold));
+    }
+
+    .section-title,
+    .hero h1,
+    .cta-panel h2,
+    .footer-brand {
+      font-family: "Cormorant Garamond", serif;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+    }
+
+    .section { padding: 5.5rem 0; }
+    .section-head { max-width: 42rem; margin-bottom: 2.5rem; }
+
+    .section-title {
+      margin: 1rem 0 1rem;
+      font-size: clamp(2.4rem, 4vw, 4rem);
+      font-weight: 600;
+    }
+
+    .section-copy {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(251, 246, 241, 0.72);
+      border-bottom: 1px solid rgba(89, 62, 48, 0.08);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 82px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 2.8rem;
+      height: 2.8rem;
+      border-radius: 18px;
+      background: linear-gradient(145deg, rgba(201, 143, 124, 0.2), rgba(217, 183, 125, 0.16));
+      border: 1px solid rgba(201, 143, 124, 0.18);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+      font-size: 1.15rem;
+    }
+
+    .brand-text strong { display: block; font-size: 1rem; }
+    .brand-text span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.77rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible { color: var(--ink); }
+
+    .nav-actions { display: flex; align-items: center; gap: 0.85rem; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      min-height: 52px;
+      padding: 0.85rem 1.35rem;
+      border: none;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+      cursor: pointer;
+    }
+
+    .btn:hover,
+    .btn:focus-visible { transform: translateY(-2px); }
+
+    .btn-primary {
+      color: #fffaf5;
+      background: linear-gradient(135deg, var(--accent-deep), var(--accent));
+      box-shadow: 0 16px 34px rgba(168, 110, 93, 0.28);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 250, 246, 0.72);
+      color: var(--ink);
+      border: 1px solid rgba(89, 62, 48, 0.1);
+    }
+
+    .hero { padding: 4.25rem 0 3.5rem; }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-copy { max-width: 40rem; }
+
+    .hero h1 {
+      margin: 1rem 0 1.25rem;
+      font-size: clamp(3.5rem, 8vw, 6.5rem);
+      font-weight: 600;
+    }
+
+    .hero p {
+      margin: 0 0 2rem;
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 36rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.85rem;
+      max-width: 38rem;
+    }
+
+    .point {
+      padding: 1rem 1.1rem;
+      border-radius: var(--radius-md);
+      background: rgba(255, 250, 246, 0.7);
+      border: 1px solid rgba(89, 62, 48, 0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .point strong { display: block; font-size: 1rem; margin-bottom: 0.25rem; }
+    .point span { display: block; color: var(--muted); font-size: 0.88rem; }
+
+    .hero-visual {
+      position: relative;
+      min-height: 640px;
+    }
+
+    .hero-card {
+      position: absolute;
+      overflow: hidden;
+      border-radius: calc(var(--radius-lg) + 6px);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, 0.55);
+    }
+
+    .hero-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-card.main { inset: 0 5rem 7rem 0; }
+    .hero-card.tall { right: 0; top: 3rem; width: 38%; height: 55%; }
+    .hero-card.small { left: 9%; bottom: 0; width: 32%; height: 31%; }
+
+    .floating-note {
+      position: absolute;
+      right: 5%;
+      bottom: 8%;
+      max-width: 250px;
+      padding: 1rem 1.1rem;
+      border-radius: 24px;
+      background: rgba(255, 250, 246, 0.84);
+      border: 1px solid rgba(89, 62, 48, 0.08);
+      box-shadow: 0 24px 50px rgba(74, 46, 34, 0.18);
+    }
+
+    .floating-note strong { display: block; margin-bottom: 0.35rem; font-size: 1rem; }
+    .floating-note span { display: block; color: var(--muted); font-size: 0.92rem; }
+
+    .intro-panel,
+    .cta-panel {
+      padding: 2rem;
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(145deg, rgba(255, 251, 247, 0.86), rgba(246, 237, 229, 0.74));
+      border: 1px solid rgba(89, 62, 48, 0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 1.4rem;
+      align-items: start;
+    }
+
+    .intro-stats { display: grid; gap: 1rem; }
+
+    .stat {
+      padding: 1.2rem 1.25rem;
+      border-radius: var(--radius-md);
+      background: rgba(255, 250, 246, 0.78);
+      border: 1px solid rgba(89, 62, 48, 0.08);
+    }
+
+    .stat strong { display: block; margin-bottom: 0.3rem; font-size: 0.98rem; }
+    .stat span { color: var(--muted); font-size: 0.93rem; }
+
+    .occasion-grid,
+    .gallery-grid,
+    .testimonial-grid,
+    .faq-grid,
+    .footer-grid {
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    .occasion-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .occasion-card {
+      position: relative;
+      min-height: 320px;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+
+    .occasion-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 18%, rgba(40, 23, 16, 0.74));
+      z-index: 1;
+    }
+
+    .occasion-card img {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 500ms ease;
+    }
+
+    .occasion-card:hover img { transform: scale(1.06); }
+
+    .occasion-card .label {
+      position: absolute;
+      left: 1.3rem;
+      right: 1.3rem;
+      bottom: 1.2rem;
+      z-index: 2;
+      color: #fff;
+    }
+
+    .occasion-card .label strong { display: block; font-size: 1.35rem; margin-bottom: 0.25rem; }
+    .occasion-card .label span { font-size: 0.92rem; color: rgba(255, 246, 240, 0.88); }
+
+    .gallery-grid {
+      grid-template-columns: 1.15fr 0.85fr 0.9fr;
+      grid-auto-rows: 240px;
+    }
+
+    .gallery-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+
+    .gallery-card.large { grid-row: span 2; }
+    .gallery-card.wide { grid-column: span 2; }
+
+    .gallery-card img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform 500ms ease;
+    }
+
+    .gallery-card:hover img { transform: scale(1.05); }
+
+    .gallery-card .tag {
+      position: absolute;
+      left: 1rem;
+      top: 1rem;
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(255, 250, 246, 0.84);
+      border: 1px solid rgba(89, 62, 48, 0.1);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .image-note {
+      margin-top: 1.1rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .split-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .feature-card {
+      padding: 2rem;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 250, 246, 0.78);
+      border: 1px solid rgba(89, 62, 48, 0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .feature-card h3,
+    .testimonial-card h3,
+    .faq-item summary {
+      margin: 0 0 0.8rem;
+      font-size: 1.35rem;
+    }
+
+    .feature-card p,
+    .feature-list,
+    .steps-list,
+    .testimonial-card p,
+    .faq-item p,
+    .contact-copy p,
+    .footer-copy,
+    .footer-meta {
+      color: var(--muted);
+    }
+
+    .feature-list,
+    .steps-list,
+    .contact-list {
+      margin: 1.2rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .feature-list li,
+    .contact-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+    }
+
+    .feature-list li::before,
+    .contact-list li::before {
+      content: "";
+      flex: 0 0 0.65rem;
+      width: 0.65rem;
+      height: 0.65rem;
+      margin-top: 0.48rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--gold));
+    }
+
+    .steps-list {
+      counter-reset: steps;
+    }
+
+    .steps-list li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1rem;
+      align-items: start;
+      padding: 1rem 0;
+      border-top: 1px solid rgba(89, 62, 48, 0.08);
+    }
+
+    .steps-list li:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .steps-list li::before {
+      counter-increment: steps;
+      content: counter(steps);
+      display: grid;
+      place-items: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent-deep), var(--accent));
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .testimonial-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .testimonial-card {
+      padding: 2rem;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 250, 246, 0.76);
+      border: 1px solid rgba(89, 62, 48, 0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .testimonial-card .quote-mark {
+      color: var(--accent);
+      font-size: 2.5rem;
+      line-height: 1;
+      margin-bottom: 0.6rem;
+    }
+
+    .testimonial-card footer {
+      margin-top: 1.2rem;
+      font-size: 0.92rem;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .social-card {
+      padding: 1.4rem;
+      border-radius: var(--radius-md);
+      background: rgba(255, 250, 246, 0.76);
+      border: 1px solid rgba(89, 62, 48, 0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .social-card strong {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .social-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .faq-grid {
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: start;
+    }
+
+    .faq-stack {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .faq-item {
+      padding: 1.15rem 1.2rem;
+      border-radius: var(--radius-md);
+      background: rgba(255, 250, 246, 0.78);
+      border: 1px solid rgba(89, 62, 48, 0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-weight: 700;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: "+";
+      font-size: 1.3rem;
+      color: var(--accent-deep);
+    }
+
+    .faq-item[open] summary::after {
+      content: "-";
+    }
+
+    .faq-item p {
+      margin: 0.8rem 0 0;
+      padding-right: 1.5rem;
+    }
+
+    .cta-panel {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 1.4rem;
+      align-items: stretch;
+      overflow: hidden;
+    }
+
+    .cta-panel h2 {
+      margin: 0.8rem 0 1rem;
+      font-size: clamp(2.6rem, 4vw, 4.2rem);
+      font-weight: 600;
+    }
+
+    .contact-copy {
+      padding: 1rem;
+    }
+
+    .contact-form {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      padding: 1.2rem;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 252, 249, 0.72);
+      border: 1px solid rgba(89, 62, 48, 0.08);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    }
+
+    .field {
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      border: 1px solid rgba(89, 62, 48, 0.12);
+      background: rgba(255, 255, 255, 0.82);
+      color: var(--ink);
+      border-radius: 16px;
+      padding: 0.9rem 1rem;
+      outline: none;
+      transition: border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: rgba(168, 110, 93, 0.45);
+      box-shadow: 0 0 0 4px rgba(201, 143, 124, 0.14);
+    }
+
+    .field textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .form-note {
+      grid-column: 1 / -1;
+      margin: 0;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 2rem 0 3rem;
+    }
+
+    .footer-grid {
+      grid-template-columns: 1.2fr 0.8fr 0.8fr;
+      align-items: start;
+      padding: 2rem 0 0;
+      border-top: 1px solid rgba(89, 62, 48, 0.1);
+    }
+
+    .footer-brand {
+      margin: 0 0 0.85rem;
+      font-size: 2.25rem;
+      font-weight: 600;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .footer-links strong,
+    .footer-contact strong {
+      display: block;
+      margin-bottom: 0.9rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .footer-meta {
+      margin-top: 1.25rem;
+      font-size: 0.84rem;
+    }
+
+    .sticky-cta {
+      position: fixed;
+      left: 50%;
+      bottom: 1rem;
+      z-index: 25;
+      display: none;
+      width: min(calc(100% - 1.25rem), 34rem);
+      transform: translateX(-50%);
+      padding: 0.65rem;
+      border-radius: 999px;
+      background: rgba(47, 34, 28, 0.86);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 20px 38px rgba(47, 34, 28, 0.24);
+    }
+
+    .sticky-cta .btn {
+      width: 100%;
+      min-height: 50px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      animation: rise 700ms ease forwards;
+    }
+
+    .reveal.delay-1 { animation-delay: 90ms; }
+    .reveal.delay-2 { animation-delay: 180ms; }
+    .reveal.delay-3 { animation-delay: 270ms; }
+
+    @keyframes rise {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 1120px) {
+      .hero-grid,
+      .intro-grid,
+      .split-grid,
+      .faq-grid,
+      .cta-panel,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual { min-height: 560px; }
+      .occasion-grid,
+      .testimonial-grid,
+      .social-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .gallery-card.wide { grid-column: span 1; }
+    }
+
+    @media (max-width: 840px) {
+      .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 1rem 0;
+      }
+
+      .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.9rem 1.2rem;
+      }
+
+      .hero { padding-top: 2.4rem; }
+      .hero-points,
+      .occasion-grid,
+      .testimonial-grid,
+      .contact-form,
+      .social-grid { grid-template-columns: 1fr; }
+      .hero-visual { min-height: 460px; }
+      .hero-card.main { inset: 0 2rem 6rem 0; }
+      .hero-card.tall { width: 40%; height: 52%; }
+      .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 260px; }
+      .gallery-card.large { grid-row: span 1; }
+      .sticky-cta { display: block; }
+    }
+
+    @media (max-width: 560px) {
+      .section { padding: 4rem 0; }
+      .hero h1 { font-size: clamp(3rem, 16vw, 4.5rem); }
+      .hero-visual { min-height: 360px; }
+      .hero-card.main { inset: 0 1.5rem 4rem 0; }
+      .hero-card.small { left: 2%; width: 42%; }
+      .hero-card.tall { width: 42%; top: 1.7rem; }
+      .floating-note { right: 2%; bottom: 4%; max-width: 190px; }
+      .intro-panel,
+      .feature-card,
+      .testimonial-card,
+      .cta-panel { padding: 1.3rem; }
+      .contact-form,
+      .cta-panel { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <div class="announcement-bar">
+      Sydney-based custom cupcakes for birthdays, celebrations, gifting, and branded business events.
+    </div>
+    <header>
+      <div class="container nav">
+        <a class="brand" href="#top" aria-label="Sydney Custom Cupcakes home">
+          <span class="brand-mark">C</span>
+          <span class="brand-text">
+            <strong>Sydney Custom Cupcakes</strong>
+            <span>Celebration Studio</span>
+          </span>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#occasions">Occasions</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#custom-orders">Custom Orders</a>
+          <a href="#corporate">Corporate</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a class="btn btn-primary" href="#contact">Request a Quote</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <span class="eyebrow">Sydney Custom Cupcakes</span>
+            <h1>Custom Cupcakes for Beautiful Celebrations</h1>
+            <p>
+              Made in Sydney for birthdays, anniversaries, baby showers, gifting, and corporate events.
+              Thoughtfully designed to look beautiful, feel personal, and turn every table into something memorable.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contact">Request a Quote</a>
+              <a class="btn btn-secondary" href="#gallery">View the Gallery</a>
+            </div>
+            <div class="hero-points">
+              <div class="point reveal delay-1">
+                <strong>Custom Designs</strong>
+                <span>Styled around your colour palette, message, and event mood.</span>
+              </div>
+              <div class="point reveal delay-2">
+                <strong>Occasion-Led</strong>
+                <span>Perfect for birthdays, gifting, showers, and branded events.</span>
+              </div>
+              <div class="point reveal delay-3">
+                <strong>Easy Enquiry</strong>
+                <span>From inspiration to quote, the process stays simple and personal.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal delay-2" aria-hidden="true">
+            <div class="hero-card main">
+              <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=1200&q=80" alt="Elegant custom cupcakes on a display table">
+            </div>
+            <div class="hero-card tall">
+              <img src="https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=900&q=80" alt="Soft pink celebration cupcakes">
+            </div>
+            <div class="hero-card small">
+              <img src="https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?auto=format&fit=crop&w=900&q=80" alt="Cupcake close up with floral icing">
+            </div>
+            <div class="floating-note">
+              <strong>Designed to be noticed</strong>
+              <span>Beautiful cupcakes that start conversations before the first bite.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container intro-panel reveal">
+          <div class="intro-grid">
+            <div>
+              <span class="eyebrow">Brand Positioning</span>
+              <h2 class="section-title">Made to Make Moments Feel More Special</h2>
+              <p class="section-copy">
+                This is not just a cupcake shop. It is a Sydney custom cupcake studio focused on creating visual centrepieces
+                for birthdays, anniversaries, baby showers, gifting, and business events. The experience is designed to inspire
+                customers through imagery first, then guide them naturally toward a personalised order.
+              </p>
+            </div>
+            <div class="intro-stats">
+              <div class="stat">
+                <strong>For personal celebrations</strong>
+                <span>Birthdays, anniversaries, baby showers, bridal moments, and thoughtful gifting.</span>
+              </div>
+              <div class="stat">
+                <strong>For business occasions</strong>
+                <span>Office milestones, launches, branded events, media moments, and client gifting.</span>
+              </div>
+              <div class="stat">
+                <strong>For idea-stage visitors</strong>
+                <span>Designed to convert browsing into enquiries through strong gallery-led inspiration.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="occasions">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="eyebrow">Occasion Categories</span>
+            <h2 class="section-title">Cupcakes for Every Kind of Celebration</h2>
+            <p class="section-copy">
+              The landing page should quickly help visitors see themselves in the brand. Each category makes the site feel relevant
+              whether someone is planning a private celebration, a thoughtful gift, or a polished corporate event.
+            </p>
+          </div>
+
+          <div class="occasion-grid">
+            <article class="occasion-card reveal">
+              <img src="https://images.unsplash.com/photo-1559622214-4d6db9f6ec23?auto=format&fit=crop&w=1200&q=80" alt="Birthday cupcakes with candles">
+              <div class="label">
+                <strong>Birthdays</strong>
+                <span>Playful, elegant, themed, or softly refined.</span>
+              </div>
+            </article>
+            <article class="occasion-card reveal delay-1">
+              <img src="https://images.unsplash.com/photo-1521305916504-4a1121188589?auto=format&fit=crop&w=1200&q=80" alt="Cupcakes styled for anniversary celebration">
+              <div class="label">
+                <strong>Anniversaries</strong>
+                <span>Romantic details with a polished event feel.</span>
+              </div>
+            </article>
+            <article class="occasion-card reveal delay-2">
+              <img src="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?auto=format&fit=crop&w=1200&q=80" alt="Elegant cupcakes for baby shower table">
+              <div class="label">
+                <strong>Baby Showers</strong>
+                <span>Soft palettes, sweet details, and memorable presentation.</span>
+              </div>
+            </article>
+            <article class="occasion-card reveal">
+              <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80" alt="Cupcakes styled for bridal event">
+              <div class="label">
+                <strong>Bridal Celebrations</strong>
+                <span>Delicate, polished designs made for special gatherings.</span>
+              </div>
+            </article>
+            <article class="occasion-card reveal delay-1">
+              <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1200&q=80" alt="Corporate event table with desserts">
+              <div class="label">
+                <strong>Corporate Events</strong>
+                <span>Branded cupcakes with a creative, business-ready touch.</span>
+              </div>
+            </article>
+            <article class="occasion-card reveal delay-2">
+              <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=80" alt="Gift box of cupcakes">
+              <div class="label">
+                <strong>Special Gifts</strong>
+                <span>Beautifully presented cupcakes that feel thoughtful from the start.</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="gallery">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="eyebrow">Featured Gallery</span>
+            <h2 class="section-title">Start with Inspiration</h2>
+            <p class="section-copy">
+              This section is the visual engine of the landing page. It should feel more like a boutique portfolio than a basic product grid,
+              encouraging visitors to pause, browse, and imagine a custom order of their own.
+            </p>
+          </div>
+
+          <div class="gallery-grid">
+            <figure class="gallery-card large reveal">
+              <img src="https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&w=1200&q=80" alt="Luxury pastel cupcake arrangement">
+              <figcaption class="tag">Signature celebration set</figcaption>
+            </figure>
+            <figure class="gallery-card reveal delay-1">
+              <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=900&q=80" alt="Close up of piped floral cupcakes">
+              <figcaption class="tag">Floral piping</figcaption>
+            </figure>
+            <figure class="gallery-card reveal delay-2">
+              <img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?auto=format&fit=crop&w=900&q=80" alt="Elegant neutral toned cupcakes">
+              <figcaption class="tag">Neutral palette</figcaption>
+            </figure>
+            <figure class="gallery-card wide reveal">
+              <img src="https://images.unsplash.com/photo-1599785209707-a456fc1337bb?auto=format&fit=crop&w=1400&q=80" alt="Modern dessert table with cupcakes">
+              <figcaption class="tag">Event-ready presentation</figcaption>
+            </figure>
+            <figure class="gallery-card reveal delay-1">
+              <img src="https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=900&q=80" alt="Pink cupcakes for baby shower">
+              <figcaption class="tag">Soft celebration styling</figcaption>
+            </figure>
+          </div>
+
+          <p class="image-note">
+            Replace these demo photographs with your own cupcake images before launch. Real brand photography will make the landing page far more persuasive.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="custom-orders">
+        <div class="container split-grid">
+          <article class="feature-card reveal">
+            <span class="eyebrow">Custom Orders</span>
+            <h2 class="section-title">Designed Around Your Vision</h2>
+            <p>
+              Every celebration is different, and the cupcakes should feel that way too. The site should make it clear that customers can
+              start with a theme, a mood board, a colour palette, or even a single inspiration photo, and turn that into a polished custom order.
+            </p>
+            <ul class="feature-list">
+              <li>Custom colour palettes, event themes, and decorative styles</li>
+              <li>Personal messages, toppers, and finishing details</li>
+              <li>Beautiful presentation for intimate orders or larger events</li>
+              <li>An enquiry flow built for customers who know exactly what they want or are still exploring ideas</li>
+            </ul>
+          </article>
+
+          <article class="feature-card reveal delay-1" id="corporate">
+            <span class="eyebrow">Corporate Orders</span>
+            <h2 class="section-title">Corporate Cupcakes That Leave an Impression</h2>
+            <p>
+              This business also serves companies that want branded cupcakes for office celebrations, product launches, client gifting,
+              PR moments, or milestone events. The landing page should present corporate ordering as stylish, easy, and presentation-ready.
+            </p>
+            <ul class="feature-list">
+              <li>Brand colour matching and event styling guidance</li>
+              <li>Logo-inspired or campaign-led finishing touches</li>
+              <li>Suitable for launches, gifting, office celebrations, and activations</li>
+              <li>A premium visual tone that feels polished enough for business audiences</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container split-grid">
+          <article class="feature-card reveal">
+            <span class="eyebrow">How It Works</span>
+            <h2 class="section-title">Simple, Personal, and Easy to Start</h2>
+            <p>
+              The site should remove friction. Rather than overwhelming visitors with a complex ordering system, it should reassure them that
+              placing a custom order is straightforward and guided.
+            </p>
+            <ol class="steps-list">
+              <li>Browse the gallery for inspiration that fits your celebration style.</li>
+              <li>Send your event details, quantity, preferred colours, and reference images.</li>
+              <li>Confirm the design direction and quote for your custom cupcakes.</li>
+              <li>Receive cupcakes created to make your event feel extra special.</li>
+            </ol>
+          </article>
+
+          <article class="feature-card reveal delay-1">
+            <span class="eyebrow">Design Direction</span>
+            <h2 class="section-title">Soft, Premium, and Image-Led</h2>
+            <p>
+              The visual tone should feel like a modern boutique bakery rather than a basic ecommerce layout. Wide spacing, warm neutrals,
+              editorial-style images, and gentle motion help the landing page feel more refined and memorable.
+            </p>
+            <ul class="feature-list">
+              <li>Clean and premium with a soft, polished atmosphere</li>
+              <li>Warm neutrals, dusty blush tones, and elegant cream backgrounds</li>
+              <li>Large imagery used as the main conversion driver</li>
+              <li>Mobile-friendly layout that keeps the gallery beautiful on small screens</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="eyebrow">Social Proof</span>
+            <h2 class="section-title">Loved by Customers Celebrating Meaningful Moments</h2>
+            <p class="section-copy">
+              A few short testimonials help this page feel trusted and real. Mixing personal event reviews with business event feedback
+              makes the brand feel flexible and credible.
+            </p>
+          </div>
+
+          <div class="testimonial-grid">
+            <article class="testimonial-card reveal">
+              <div class="quote-mark">"</div>
+              <p>
+                The cupcakes looked absolutely beautiful and made the birthday table feel complete. Everyone asked where we ordered them from.
+              </p>
+              <footer>Emily T. | Birthday Celebration</footer>
+            </article>
+            <article class="testimonial-card reveal delay-1">
+              <div class="quote-mark">"</div>
+              <p>
+                We wanted something elegant, soft, and memorable for our baby shower, and the final result was exactly that.
+              </p>
+              <footer>Grace H. | Baby Shower Order</footer>
+            </article>
+            <article class="testimonial-card reveal delay-2">
+              <div class="quote-mark">"</div>
+              <p>
+                The corporate cupcakes brought a polished and creative touch to our launch event. They were a standout detail on the day.
+              </p>
+              <footer>Brand Team | Product Launch Event</footer>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="eyebrow">Visual Marketing</span>
+            <h2 class="section-title">Built for Browsing, Sharing, and Instagram-Ready Enquiries</h2>
+            <p class="section-copy">
+              This business benefits when the website feels as visual as social media. The page should encourage visitors to imagine how the cupcakes will look
+              at an event, in photos, and in shared moments online.
+            </p>
+          </div>
+
+          <div class="social-grid">
+            <article class="social-card reveal">
+              <strong>Photo-first storytelling</strong>
+              <span>Large editorial imagery helps idea-stage visitors turn interest into action.</span>
+            </article>
+            <article class="social-card reveal delay-1">
+              <strong>Share-worthy presentation</strong>
+              <span>Designs should feel polished enough to be photographed, posted, and remembered.</span>
+            </article>
+            <article class="social-card reveal delay-2">
+              <strong>Perfect for gifting</strong>
+              <span>Thoughtful presentation makes cupcakes feel premium even before the event begins.</span>
+            </article>
+            <article class="social-card reveal delay-3">
+              <strong>Strong for business branding</strong>
+              <span>Corporate orders can look refined, on-brand, and campaign-ready with the right visuals.</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="container faq-grid">
+          <div class="section-head reveal">
+            <span class="eyebrow">FAQ</span>
+            <h2 class="section-title">Questions Visitors Usually Ask Before Enquiring</h2>
+            <p class="section-copy">
+              This section keeps the landing page helpful without turning it into a long policy document. It answers the practical questions
+              that help visitors feel ready to enquire.
+            </p>
+          </div>
+
+          <div class="faq-stack">
+            <details class="faq-item reveal" open>
+              <summary>Do you offer fully custom cupcake designs?</summary>
+              <p>Yes. Orders can be tailored around your event theme, colour palette, style, message, and inspiration images.</p>
+            </details>
+            <details class="faq-item reveal delay-1">
+              <summary>What kinds of events do you cater for?</summary>
+              <p>Birthdays, anniversaries, baby showers, bridal celebrations, gifting, office events, launches, and branded corporate occasions.</p>
+            </details>
+            <details class="faq-item reveal delay-2">
+              <summary>Can I send inspiration photos?</summary>
+              <p>Absolutely. Reference images are one of the easiest ways to shape the final look and feel of your order.</p>
+            </details>
+            <details class="faq-item reveal">
+              <summary>Do you offer corporate cupcake orders?</summary>
+              <p>Yes. Corporate orders can be styled around brand colours, campaign themes, and event presentation needs.</p>
+            </details>
+            <details class="faq-item reveal delay-1">
+              <summary>How early should I enquire?</summary>
+              <p>As early as possible is best, especially for custom themes, larger event orders, or dates with high demand.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="container cta-panel reveal">
+          <div class="contact-copy">
+            <span class="eyebrow">Final CTA</span>
+            <h2>Let's Create Something Beautiful</h2>
+            <p>
+              Whether the customer already knows exactly what they want or is simply browsing for ideas, the landing page should make the next
+              step feel easy, warm, and personal.
+            </p>
+            <ul class="contact-list">
+              <li>Collect the event date, occasion, quantity, and design ideas</li>
+              <li>Invite inspiration images to make the enquiry feel collaborative</li>
+              <li>Keep the final call to action visible, elegant, and conversion-focused</li>
+            </ul>
+          </div>
+
+          <form class="contact-form">
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name">
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com">
+            </div>
+            <div class="field">
+              <label for="date">Event Date</label>
+              <input id="date" name="date" type="date">
+            </div>
+            <div class="field">
+              <label for="occasion">Occasion</label>
+              <select id="occasion" name="occasion">
+                <option value="">Select an occasion</option>
+                <option>Birthday</option>
+                <option>Anniversary</option>
+                <option>Baby Shower</option>
+                <option>Bridal Celebration</option>
+                <option>Corporate Event</option>
+                <option>Gift Order</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="quantity">Approximate Quantity</label>
+              <input id="quantity" name="quantity" type="text" placeholder="e.g. 12 cupcakes, 24 cupcakes, 60 cupcakes">
+            </div>
+            <div class="field full">
+              <label for="ideas">Design Ideas</label>
+              <textarea id="ideas" name="ideas" placeholder="Share your event style, colours, message, theme, or inspiration images."></textarea>
+            </div>
+            <p class="form-note">
+              This form is currently a design placeholder. Connect it to your preferred email, CRM, or enquiry form service when ready.
+            </p>
+            <div class="field full">
+              <button class="btn btn-primary" type="submit">Send Enquiry</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-grid">
+        <div>
+          <p class="footer-brand">Sydney custom cupcakes for celebrations worth remembering.</p>
+          <p class="footer-copy">
+            A one-page landing page built to attract customers through beautiful imagery, explain the custom order offer clearly,
+            and convert interest into personalised cupcake enquiries.
+          </p>
+          <p class="footer-meta">Replace the demo images and form destination with your real brand assets before launch.</p>
+        </div>
+
+        <div class="footer-links">
+          <strong>Sections</strong>
+          <a href="#about">About</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#custom-orders">Custom Orders</a>
+          <a href="#corporate">Corporate</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="footer-contact">
+          <strong>Suggested Contact</strong>
+          <div class="footer-copy">
+            hello@yourcupcakebrand.com<br>
+            Sydney, Australia<br>
+            Instagram-ready visual brand experience
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <div class="sticky-cta">
+    <a class="btn btn-primary" href="#contact">Request a Quote</a>
+  </div>
+  <script>
+    document.querySelector(".contact-form")?.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      const formData = new FormData(form);
+      const name = formData.get("name") || "";
+      const email = formData.get("email") || "";
+      const date = formData.get("date") || "";
+      const occasion = formData.get("occasion") || "";
+      const quantity = formData.get("quantity") || "";
+      const ideas = formData.get("ideas") || "";
+      const subject = encodeURIComponent("Custom Cupcake Enquiry");
+      const body = encodeURIComponent(
+        "Name: " + name + "\n" +
+        "Email: " + email + "\n" +
+        "Event Date: " + date + "\n" +
+        "Occasion: " + occasion + "\n" +
+        "Approximate Quantity: " + quantity + "\n\n" +
+        "Design Ideas:\n" + ideas
+      );
+
+      window.location.href = "mailto:hello@yourcupcakebrand.com?subject=" + subject + "&body=" + body;
+    });
+  </script>
+</body>
+</html>
+
